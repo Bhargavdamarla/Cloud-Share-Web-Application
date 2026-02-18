@@ -1,0 +1,308 @@
+{
+  "info": {
+    "_postman_id": "6301e808-5ee3-4224-8134-17330705ea06",
+    "name": "Cloud Share",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12768386"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"clerkId\": \"clerk999\",\n    \"email\": \"test101@example.com\",\n    \"firstName\": \"test update\",\n    \"lastName\": \"test\",\n    \"photoUrl\": \"image 2\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create order",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"planId\": \"Premium\",\n    \"amount\": 150000,\n    \"currency\": \"INR\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/payments/create-order",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "payments",
+            "create-order"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Upload files",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18zME1SdVJxSEx3YnRnOHhwR0FaSXVBQ2xkOW8iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjUxNzMiLCJleHAiOjE3NTM5ODM1MDgsImZ2YSI6WzY4NTYsLTFdLCJpYXQiOjE3NTM5ODM0NDgsImlzcyI6Imh0dHBzOi8vY29ycmVjdC1zdGFybGluZy0yMS5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTM5ODM0MzgsInNpZCI6InNlc3NfMzBRdU9YanVoSXVhQTBIUDBHZVNGOXhvd0FTIiwic3ViIjoidXNlcl8zME1jaVVDQlJTVWxrZlhnZmxaclZ2MzRmT0EiLCJ2IjoyfQ.kQKOv2SdsYx6dLfXHyXP7oPOap6T5uZwDGZ_Gly43DibkrSKOAZNcRXHDAISJYHFdnxMJ4kZFwUB1bgubXmA-pKD494dbM0SsrN_K_M1HjUPZWRX3kZvpGkBNSQGjDrjTc269oTan79GoZYifI_nWrpe2WRA7eoWgaRkcBrk9gGDmsAhTDw5YgaOo92qtamm7VJTWBXOap_bSkDXq02_y5QcksLzNRM8gZy5Gn03znBzl06sKoTQd4_URXS1ENI5-HfQ_9UMK4a88SYj0DKJVG47MOEiN5KKmeY2ukh52If6god8p70lXzOo71JwAtqRjuVROnlWiBoJudktTUqt6g",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "files",
+              "type": "file",
+              "src": "/Users/bushansirgur/Downloads/MoneyManager - Youtube v1.postman_collection.json"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/files/upload",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "files",
+            "upload"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read files",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18zME1SdVJxSEx3YnRnOHhwR0FaSXVBQ2xkOW8iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjUxNzMiLCJleHAiOjE3NTM4MDk0MDgsImZ2YSI6WzM5NTQsLTFdLCJpYXQiOjE3NTM4MDkzNDgsImlzcyI6Imh0dHBzOi8vY29ycmVjdC1zdGFybGluZy0yMS5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTM4MDkzMzgsInNpZCI6InNlc3NfMzBRdU9YanVoSXVhQTBIUDBHZVNGOXhvd0FTIiwic3ViIjoidXNlcl8zME1jaVVDQlJTVWxrZlhnZmxaclZ2MzRmT0EiLCJ2IjoyfQ.veVki_4hPCOIIYHaNX2DL3JnoMqvrp6INLb4GgeseKB0WyrpMWWpyE-H7o6bz52835dOrEMY9JgQAHYjfLE2ugDlLb63P8xlNf5NQQqqNR-HN7GOM03_TBSptEOCOkqCUfYfSkvlLtxfSwyqAQ3_N9EPU8xPzoS-oBAh23DmjhXX22C_xrLrIwtCDtfhvwT_ZzzvPhnMWBT06vrUxLMfC2slc29oTVWxgbmzgrVoMmklfOuRpJC67QDE9G5wMAPWfgmsVaQn1cIdelvQ-YRZVvvTfFGl3JEXRop8NP4_9g_Kk2I9wZuLyfqT0szVMlCPuM7drL7swyrz37pOrCuKXQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/files/my",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "files",
+            "my"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get transactions",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18zME1SdVJxSEx3YnRnOHhwR0FaSXVBQ2xkOW8iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjUxNzMiLCJleHAiOjE3NTM4MDk0MDgsImZ2YSI6WzM5NTQsLTFdLCJpYXQiOjE3NTM4MDkzNDgsImlzcyI6Imh0dHBzOi8vY29ycmVjdC1zdGFybGluZy0yMS5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTM4MDkzMzgsInNpZCI6InNlc3NfMzBRdU9YanVoSXVhQTBIUDBHZVNGOXhvd0FTIiwic3ViIjoidXNlcl8zME1jaVVDQlJTVWxrZlhnZmxaclZ2MzRmT0EiLCJ2IjoyfQ.veVki_4hPCOIIYHaNX2DL3JnoMqvrp6INLb4GgeseKB0WyrpMWWpyE-H7o6bz52835dOrEMY9JgQAHYjfLE2ugDlLb63P8xlNf5NQQqqNR-HN7GOM03_TBSptEOCOkqCUfYfSkvlLtxfSwyqAQ3_N9EPU8xPzoS-oBAh23DmjhXX22C_xrLrIwtCDtfhvwT_ZzzvPhnMWBT06vrUxLMfC2slc29oTVWxgbmzgrVoMmklfOuRpJC67QDE9G5wMAPWfgmsVaQn1cIdelvQ-YRZVvvTfFGl3JEXRop8NP4_9g_Kk2I9wZuLyfqT0szVMlCPuM7drL7swyrz37pOrCuKXQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/files/my",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "files",
+            "my"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read file",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18zME1SdVJxSEx3YnRnOHhwR0FaSXVBQ2xkOW8iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjUxNzMiLCJleHAiOjE3NTM4MDk0MDgsImZ2YSI6WzM5NTQsLTFdLCJpYXQiOjE3NTM4MDkzNDgsImlzcyI6Imh0dHBzOi8vY29ycmVjdC1zdGFybGluZy0yMS5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTM4MDkzMzgsInNpZCI6InNlc3NfMzBRdU9YanVoSXVhQTBIUDBHZVNGOXhvd0FTIiwic3ViIjoidXNlcl8zME1jaVVDQlJTVWxrZlhnZmxaclZ2MzRmT0EiLCJ2IjoyfQ.veVki_4hPCOIIYHaNX2DL3JnoMqvrp6INLb4GgeseKB0WyrpMWWpyE-H7o6bz52835dOrEMY9JgQAHYjfLE2ugDlLb63P8xlNf5NQQqqNR-HN7GOM03_TBSptEOCOkqCUfYfSkvlLtxfSwyqAQ3_N9EPU8xPzoS-oBAh23DmjhXX22C_xrLrIwtCDtfhvwT_ZzzvPhnMWBT06vrUxLMfC2slc29oTVWxgbmzgrVoMmklfOuRpJC67QDE9G5wMAPWfgmsVaQn1cIdelvQ-YRZVvvTfFGl3JEXRop8NP4_9g_Kk2I9wZuLyfqT0szVMlCPuM7drL7swyrz37pOrCuKXQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/files/public/6887b8f27ad74aedfa9c0e55",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "files",
+            "public",
+            "6887b8f27ad74aedfa9c0e55"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Download file",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18zME1SdVJxSEx3YnRnOHhwR0FaSXVBQ2xkOW8iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjUxNzMiLCJleHAiOjE3NTM4MDk0MDgsImZ2YSI6WzM5NTQsLTFdLCJpYXQiOjE3NTM4MDkzNDgsImlzcyI6Imh0dHBzOi8vY29ycmVjdC1zdGFybGluZy0yMS5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTM4MDkzMzgsInNpZCI6InNlc3NfMzBRdU9YanVoSXVhQTBIUDBHZVNGOXhvd0FTIiwic3ViIjoidXNlcl8zME1jaVVDQlJTVWxrZlhnZmxaclZ2MzRmT0EiLCJ2IjoyfQ.veVki_4hPCOIIYHaNX2DL3JnoMqvrp6INLb4GgeseKB0WyrpMWWpyE-H7o6bz52835dOrEMY9JgQAHYjfLE2ugDlLb63P8xlNf5NQQqqNR-HN7GOM03_TBSptEOCOkqCUfYfSkvlLtxfSwyqAQ3_N9EPU8xPzoS-oBAh23DmjhXX22C_xrLrIwtCDtfhvwT_ZzzvPhnMWBT06vrUxLMfC2slc29oTVWxgbmzgrVoMmklfOuRpJC67QDE9G5wMAPWfgmsVaQn1cIdelvQ-YRZVvvTfFGl3JEXRop8NP4_9g_Kk2I9wZuLyfqT0szVMlCPuM7drL7swyrz37pOrCuKXQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/files/download/6887b8f27ad74aedfa9c0e55",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "files",
+            "download",
+            "6887b8f27ad74aedfa9c0e55"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get credits",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18zME1SdVJxSEx3YnRnOHhwR0FaSXVBQ2xkOW8iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjUxNzMiLCJleHAiOjE3NTQxMTM2OTEsImZ2YSI6WzkwMjUsLTFdLCJpYXQiOjE3NTQxMTM2MzEsImlzcyI6Imh0dHBzOi8vY29ycmVjdC1zdGFybGluZy0yMS5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTQxMTM2MjEsInNpZCI6InNlc3NfMzBRdU9YanVoSXVhQTBIUDBHZVNGOXhvd0FTIiwic3ViIjoidXNlcl8zME1jaVVDQlJTVWxrZlhnZmxaclZ2MzRmT0EiLCJ2IjoyfQ.fC6LExBD0rTVK0ihY2rmD9NAdawcmTIrRiyHWWwhxFcAst8Xgl4EiJutqRmYNev-X4FH4QEDstcGLTUIPrK00Y7nw64iovJNiPAGvIUzajeGqfhUkv5INU6vLnlegNhn4KN19QmkUIEvitn4xyTOwHkPBxBN7g2_uFUT56iJBTUktWjczojBUwnloCN5hiaaVBwUKLlSrSnAolvB-y1KSein3fbdZw_bNmqEqGXC0X1psT6kVp8UMHehNolVPpsI64rnbY57xwOpPbv9e27x22nbYYmvAjU7-ghmgrkGJroQ3Q0o-rro0ENUtwEU71SpQA8F-SY0WBtRDBGk3iruww",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/users/credits",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "users",
+            "credits"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete file",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18zME1SdVJxSEx3YnRnOHhwR0FaSXVBQ2xkOW8iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjUxNzMiLCJleHAiOjE3NTM4MTE5NjUsImZ2YSI6WzM5OTcsLTFdLCJpYXQiOjE3NTM4MTE5MDUsImlzcyI6Imh0dHBzOi8vY29ycmVjdC1zdGFybGluZy0yMS5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTM4MTE4OTUsInNpZCI6InNlc3NfMzBRdU9YanVoSXVhQTBIUDBHZVNGOXhvd0FTIiwic3ViIjoidXNlcl8zME1jaVVDQlJTVWxrZlhnZmxaclZ2MzRmT0EiLCJ2IjoyfQ.KGg6lQUriwlDvJFVqZ2PlIuGSAR3KJz6t6rqvAnMSFkdSXgJ7fSsQ8Suf2P7_qclRHuOyBQXZt7vdTwmM0dI6WXKFgN570nHCc538o4ekiFSLPKvXbGyCjmqplAqdQe_Z13728q0-5kfF43sFvsySZiXKJ-I47D1J_iVeN65i45XwitGTh8sO7x_vfwYN2HMpiDzpeFEf1lbYnxZ7IBX3gXHWgdWIL2RNVQDblcrC4BIXldlburKmxlanVoLg8wXpYMwxFlNYI_3Wgh9sjg6Pb0q5t17YdVKvjkdC-Ok-9zrA23TLP0OYtjAo9YwTgrL4s5sB3gCAS42WgADEE85pA",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/files/6887b8f27ad74aedfa9c0e55",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "files",
+            "6887b8f27ad74aedfa9c0e55"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Toggle public",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18zME1SdVJxSEx3YnRnOHhwR0FaSXVBQ2xkOW8iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwOi8vbG9jYWxob3N0OjUxNzMiLCJleHAiOjE3NTM4MTIzNzYsImZ2YSI6WzQwMDMsLTFdLCJpYXQiOjE3NTM4MTIzMTYsImlzcyI6Imh0dHBzOi8vY29ycmVjdC1zdGFybGluZy0yMS5jbGVyay5hY2NvdW50cy5kZXYiLCJuYmYiOjE3NTM4MTIzMDYsInNpZCI6InNlc3NfMzBRdU9YanVoSXVhQTBIUDBHZVNGOXhvd0FTIiwic3ViIjoidXNlcl8zME1jaVVDQlJTVWxrZlhnZmxaclZ2MzRmT0EiLCJ2IjoyfQ.wbirtlAWxfrFPUpqyMvTM23MP2BNgvOCMIZcDC6Q8AL0tWuaXOEKIjFeZE1hg6nMJOXp0UU76EN4G77DTjgdjMRZF9dn4t0LV6-WabIrm7WaikelqdwfwBffHTbZTxGjzxg_gk71TtKksT12tqFkOGiGAH9Yby-KDfG7KHxBYFUGZfK9msXBPNd8DP7PMOiZwtoWPTlahBfJGr_1LvuAkBkWchWDLeo4MSGBQfbyi-VTQLvhKqm5PB2v-gOgHaCBXfNBbOhR9hZugEB15O1uopwgmKlHGzA1bcXBeLOQKQBBt-UxqbJbEwP8w-ymDZS1471WwSvlEXgSF-wmM2tvgQ",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1.0/files/6887b86a9bb81dee82dfd0f5/toggle-public",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1.0",
+            "files",
+            "6887b86a9bb81dee82dfd0f5",
+            "toggle-public"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
