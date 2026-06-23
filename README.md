@@ -1,150 +1,182 @@
 # Cloud Share - SaaS File Sharing Platform
 
-Cloud Share is a full-stack file sharing application that allows users to securely upload, manage, and share files. The platform includes authentication, subscription-based credits, and secure file access, providing a simple and scalable cloud storage experience.
-
-## Overview
-
-The goal of this project was to build a modern file-sharing platform with a clean user experience and secure backend architecture. Users can upload files, manage their storage, and control file visibility while using a credit-based system for premium features.
+Cloud Share is a full-stack file-sharing application built with React, Spring Boot, and MongoDB. It enables users to securely upload, manage, and share files while supporting a credit-based subscription system integrated with Razorpay.
 
 ## Features
 
-- Secure user authentication and session management
-- Upload and manage files
-- Public and private file sharing
-- Credit-based subscription model
-- Razorpay payment integration
-- User dashboard for managing uploads
-- Responsive and user-friendly interface
-- RESTful backend APIs
+* User authentication and authorization
+* File upload and management
+* Public and private file sharing
+* Credit-based subscription model
+* Razorpay payment integration
+* Responsive UI
+* RESTful API architecture
+* Centralized exception handling
+
+---
 
 ## Tech Stack
 
 ### Frontend
-- React.js
-- Tailwind CSS
-- Axios
+
+* React.js
+* Tailwind CSS
+* Axios
 
 ### Backend
-- Spring Boot
-- Java
-- REST APIs
+
+* Spring Boot
+* Java
+* REST APIs
 
 ### Database
-- MongoDB
+
+* MongoDB
 
 ### Authentication
-- Clerk
+
+* Clerk
 
 ### Payment Gateway
-- Razorpay
 
-## Architecture
+* Razorpay
+
+---
+
+# System Architecture
 
 ```text
-Client (React)
+React Frontend
        ↓
 Spring Boot REST APIs
        ↓
-MongoDB Database
+Service Layer
        ↓
-Clerk Authentication
+Repository Layer
        ↓
-Razorpay Payment Services
+MongoDB
 ```
 
-## Project Structure
+The backend follows a layered architecture to ensure separation of concerns and maintainability.
+
+---
+
+# Backend Structure
 
 ```text
-Cloud-Share-Web-Application
+backend
 │
-├── frontend
-│
-├── backend
-│
-├── README.md
-│
-└── .env
+├── controller
+├── service
+├── repository
+├── dto
+├── model
+├── exception
+├── config
+└── util
 ```
 
-## Key Functionalities
+---
 
-### User Authentication
-- Sign up and login
-- Session management
-- Protected routes
+# API Endpoints
 
-### File Management
-- Upload files
-- Delete files
-- View uploaded files
-- Share files securely
-- Public and private access control
+## Authentication
 
-### Subscription System
-- Purchase credits
-- Razorpay integration
-- Credit usage tracking
+| Method | Endpoint           | Description   |
+| ------ | ------------------ | ------------- |
+| POST   | /api/auth/login    | Login user    |
+| POST   | /api/auth/register | Register user |
 
-## Getting Started
+## File Management
 
-### Clone the Repository
+| Method | Endpoint          | Description         |
+| ------ | ----------------- | ------------------- |
+| POST   | /api/files/upload | Upload file         |
+| GET    | /api/files        | Retrieve user files |
+| DELETE | /api/files/{id}   | Delete file         |
+| GET    | /api/files/{id}   | Get file details    |
 
-```bash
-git clone https://github.com/Bhargavdamarla/Cloud-Share-Web-Application.git
+## Payment APIs
+
+| Method | Endpoint                  | Description           |
+| ------ | ------------------------- | --------------------- |
+| POST   | /api/payment/create-order | Create Razorpay order |
+| POST   | /api/payment/verify       | Verify payment        |
+
+---
+
+# Error Handling
+
+The application uses centralized exception handling to provide meaningful error responses.
+
+Examples:
+
+* Invalid credentials
+* Unauthorized access
+* File not found
+* Insufficient credits
+* Payment verification failures
+
+Sample Response:
+
+```json
+{
+  "timestamp": "2026-06-23T10:30:00",
+  "status": 404,
+  "message": "File not found"
+}
 ```
 
-### Frontend Setup
+---
 
-```bash
-cd frontend
+# Design Decisions
 
-npm install
+### Layered Architecture
 
-npm run dev
-```
+The application follows Controller → Service → Repository architecture to improve readability and maintainability.
 
-### Backend Setup
+### DTO Pattern
 
-```bash
-cd backend
+DTOs are used to separate API contracts from database entities and avoid exposing internal models.
 
-./mvnw spring-boot:run
-```
+### Centralized Exception Handling
 
-## Environment Variables
+Custom exceptions and global handlers ensure consistent API responses.
 
-### Frontend
+### Authentication
 
-```env
-VITE_CLERK_PUBLISHABLE_KEY=
-```
+Clerk manages user authentication and session handling.
 
-### Backend
+### Payment Processing
 
-```env
-MONGODB_URI=
-RAZORPAY_KEY_ID=
-RAZORPAY_SECRET=
-```
+Razorpay is integrated to support secure credit purchases.
 
-## Future Improvements
+---
 
-- Folder organization support
-- Drag-and-drop uploads
-- Email sharing
-- Search and filtering
-- Cloud storage integration
-- Admin dashboard
-- File analytics and usage tracking
+# Learning Outcomes
 
-## Learning Outcomes
+This project helped me gain practical experience in:
 
-Through this project, I gained practical experience in:
+* Building scalable REST APIs
+* Layered architecture design
+* MongoDB data modeling
+* Exception handling and validation
+* Third-party integrations
+* Payment gateway implementation
+* Frontend-backend communication
+* Full-stack application development
 
-- Building full-stack applications with React and Spring Boot
-- Designing REST APIs
-- Working with MongoDB and NoSQL databases
-- Implementing authentication and authorization
-- Integrating third-party payment gateways
-- Managing client-server communication
-- Deploying and maintaining scalable applications
+---
+
+# Future Improvements
+
+* Folder support
+* Search functionality
+* Email sharing
+* Admin dashboard
+* Analytics and monitoring
+* Docker support
+* CI/CD pipelines
+
+
+
